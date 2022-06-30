@@ -5,9 +5,9 @@ name: goodreads-scraper
 on:
   push:
     branches:
-        main
-  schedule:
-    - cron: '*/5 * * * *' # 
+        NJimp96-patch-1
+#   schedule:
+#     - cron: '*/5 * * * *' # 
 
 jobs:
   build:
