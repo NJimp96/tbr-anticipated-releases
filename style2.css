@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Jost:wght@100;400&family=Rochester&family=Elsie&family=Open+Sans&family=Raleway:wght@100;200;300;400&display=swap");
+
+*{
+    /* font-family: "Advent Pro", sans-serif; */
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+}
+
+#header{
+    background-color: #fafafa;
+    padding: 0.5%;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    margin-top: 0;
+}
+
+/* .fixed-header{
+    position: fixed;
+    top: 0;
+} */
+
+#main{
+    text-align: center;
+}
+
+#header h1{
+    font-family: Jost, sans-serif;
+    margin: 0.4em;
+    text-transform: uppercase;
+    color: #53A2BE;
+}
+
+h3{
+    display: inline-block;
+    font-family: Jost, sans-serif;
+    color: #D60849;
+    padding: 0 0.5em;
+    margin: 0 0.5em;
+}
+
+h2{
+    font-family: Raleway, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #6F2A51;
+}
+#books_week{
+    scroll-margin-top: 8em;
+}
+#books_week h2{
+    margin: 1em;
+    margin-bottom: 0.5em;
+}
+#books_month{
+    scroll-margin-top: 8em;
+}
+#books_month h2{
+    margin-top: 0em
+}
+
+.shelf{
+    overflow: auto;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.covercontainers{
+    overflow: hidden;
+    padding: 1% 1.5% 3.5% 1.5%;
+    margin: 0 5%;
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+    /* background-color: aqua; */
+    /* border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1.3px;
+    border-color: #996888; */
+    /* border-radius: 10px;
+    background-color: #F5F5F5;
+    box-shadow:  5px 5px 10px #d4d4d4,
+                   -1px -1px 5px #d4d4d4; */
+}
+
+.covercontainers a{
+    text-decoration: none;
+}
+
+.bookcovers {
+    max-width: 100%;
+    aspect-ratio: 0.6675;
+    border-radius: 10px;
+}
+
+.dates{
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    margin-top: 8%;
+    margin-bottom: 0;
+    color: white;
+    border-radius: 20px;
+    padding: 3.5%;
+    background-color: #E6C2D9;
+    /* box-shadow:  5px 5px 10px #d4d4d4,
+                   -1px -1px 5px #d4d4d4; */
+}
+
+#footer{
+    background-color: #fafafa;
+    padding: 0.5%;
+    text-align: center;
+}
+
+.fa{
+    display: block;
+    color:#D60849;
+}
+
+#footer h3{
+    font-family: Elsie, cursive;
+    color:#53A2BE;
+}
+
+@media screen and (max-width: 920px){
+    .covercontainers{
+        width: 35%
+    }
+}
+
+@media screen and (max-width: 500px){
+    .covercontainers{
+        width: 60%
+    }
+}
