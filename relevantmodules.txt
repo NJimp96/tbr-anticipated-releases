@@ -1,0 +1,7 @@
+bs4
+requests
+datetime
+pandas
+json
+re
+math
