@@ -3,11 +3,11 @@
 name: goodreads-scraper
 
 on:
-  push:
-    branches:
-        main
-#   schedule:
-#     - cron: '*/5 * * * *' # 
+#   push:
+#     branches:
+#         main
+  schedule:
+    - cron: '0 0 * * 0' # run at 00:00 every Sunday
 
 jobs:
   build:
