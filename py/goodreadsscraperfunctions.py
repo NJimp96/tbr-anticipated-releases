@@ -34,7 +34,7 @@ def get_links_images(soup):
     book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
     book_imgs = [covers.find("img")["src"] for covers in book_covers]
     book_imgs_complete = [img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
-    return book_urls_complete, book_imgs
+    return book_urls_complete, book_imgs_complete
 
 
 def get_titles_authors(soup):
