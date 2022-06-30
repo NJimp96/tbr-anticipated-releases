@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/data/full_tbr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/full_tbr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/tbr_coming_week.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_coming_week.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/tbr_past_month.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_past_month.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,21 +87,5 @@
       <updated>1656545130035</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/py/main.py</url>
-          <line>54</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/py/main.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

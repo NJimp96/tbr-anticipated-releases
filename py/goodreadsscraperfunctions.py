@@ -1,16 +1,8 @@
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
 import requests as requests
-import pandas as pd
-import json
 import math
 import re
-
-url = "https://www.goodreads.com/review/list/152889088-gs?&shelf=to-read&page=1"
-url2 = "https://www.goodreads.com/review/list/152889088-gs?&shelf=to-read&page=2"
-page = requests.get(url)
-html_soup = bs(page.content, 'html.parser')
-# print(soup)
 
 
 def get_num_pages(books_per_page, url):
@@ -71,39 +63,3 @@ def get_all_info(soup):
     links = get_links_images(soup)[0]
     covers = get_links_images(soup)[1]
     return titles, authors, pub_dates, links, covers
-
-
-# book_covers = html_soup.find_all("td", class_="field cover")
-# book_urls = [cover.find("a")["href"] for cover in book_covers]
-# book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
-# book_imgs = [covers.find("img")["src"] for covers in book_covers]
-# book_imgs_complete = [img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
-# print(book_imgs)
-# titles = pd.DataFrame(get_titles_authors(html_soup)[0], columns=["Title"])
-# authors = pd.DataFrame(get_titles_authors(html_soup)[1], columns=["Author"])
-#pub_dates = pd.DataFrame(get_dates(html_soup), columns=["Date"])
-#dates = pd.to_datetime(pub_dates["Date"])
-# links = pd.DataFrame(get_links_images(html_soup)[0], columns=["Link"])
-# covers = pd.DataFrame(get_links_images(html_soup)[1], columns=["Cover"])
-#
-# books_info = titles.join([authors, dates, links, covers])
-# books_info = books_info.sort_values(by=["Date"])
-# books_info["Date"] = books_info["Date"].dt.strftime("%b %d, %Y")
-#
-#
-# json_data = json.dumps(books_info.to_dict(orient="records"))
-#
-
-# with open("sample_data.json", "w") as f:
-#     f.write(json_data)
-
-# TODO: create a json file with everything that has been scraped (make it a pandas dataframe first)
-
-
-# TODO: After turning the dates into a dataframe turn them into datetime data types
-
-
-# TODO: write code to loop through each page
-
-
-# TODO: merge each dataframe during each loop
