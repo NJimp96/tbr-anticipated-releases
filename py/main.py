@@ -49,7 +49,7 @@ def scrape_tbr(url_temp):
     for title, df in books_dfs.items():
         df["Date"] = df["Date"].dt.strftime("%b %d, %Y")
         json_data = json.dumps(df.to_dict(orient="records"))
-        with open(f"../data/{title}.json", "w") as f:
+        with open(f"{title}.json", "w") as f:
             f.write(json_data)
 
     return books_info, books_month, books_week
