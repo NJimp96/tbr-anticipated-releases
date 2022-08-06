@@ -1,18 +1,10 @@
 $.getJSON("https://raw.githubusercontent.com/NJimp96/tbr-anticipated-releases/main/data/tbr_past_month.json")
 .done(function( data ) {
-    // firstTitle = data[0].Title
-    // console.log(firstTitle)
-    // return firstTitle;
-    // document.getElementById("shelf").innerHTML += data.map(bookCard).join('');
     document.getElementById("shelf_month").innerHTML = data.map(bookCard).join("")
 });
 
 $.getJSON("https://raw.githubusercontent.com/NJimp96/tbr-anticipated-releases/main/data/tbr_coming_week.json")
 .done(function( data ) {
-    // firstTitle = data[0].Title
-    // console.log(firstTitle)
-    // return firstTitle;
-    // document.getElementById("shelf").innerHTML += data.map(bookCard).join('');
     document.getElementById("shelf_week").innerHTML = data.map(bookCard).join("")
 });
 
