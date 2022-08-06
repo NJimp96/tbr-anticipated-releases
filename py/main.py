@@ -6,7 +6,7 @@ import pandas as pd
 import json
 import re
 
-URL_TEMPLATE = "https://www.goodreads.com/review/list/152889088-gs?&shelf=to-read&page=1"
+URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?&shelf=to-read&page=1"
 NUM_BOOKS_PER_PAGE = 30
 
 
