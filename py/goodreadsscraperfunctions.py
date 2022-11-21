@@ -7,7 +7,7 @@ import re
 
 def get_num_pages(books_per_page, url):
     """This function takes in the number of books per page on the goodreads to-reads list
-    and and finds the number of pages to scrape.
+    and finds the number of pages to scrape.
     This is done by finding the total number of books on the list and dividing that by the number of books per page."""
 
     p = requests.get(url)
@@ -25,7 +25,7 @@ def get_links_images(soup):
     book_urls = [cover.find("a")["href"] for cover in book_covers]
     book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
     book_imgs = [covers.find("img")["src"] for covers in book_covers]
-    book_imgs_complete = [img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
+    book_imgs_complete = [img if "nophoto" in img else img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
     return book_urls_complete, book_imgs_complete
 
 
