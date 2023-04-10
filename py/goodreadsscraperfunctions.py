@@ -83,7 +83,7 @@ def get_dates(soup):
         elif new_date.isnumeric():
             new_date = "Jan 01, " + new_date
 
-        pub_date_edition.append(new_date)
+        pub_date_edition.append(datetime.strptime(new_date, "%b %d, %Y"))
 
     return pub_date_edition
 
