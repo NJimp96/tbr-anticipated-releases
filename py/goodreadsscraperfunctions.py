@@ -80,6 +80,8 @@ def get_dates(soup):
             new_date = new_date.strftime("%b %d, %Y")
         elif "," not in new_date and not new_date.isnumeric():
             new_date = new_date[:3] + ' 01, ' + new_date[4:]
+        elif new_date.isnumeric():
+            new_date = "Jan 01, " + new_date
 
         pub_date_edition.append(new_date)
 
