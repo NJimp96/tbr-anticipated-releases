@@ -76,7 +76,7 @@ def get_dates(soup):
     for date in pub_date_edition_soup:
         new_date = date.get_text().replace("date pub edition      ", "").strip()
         if new_date == "date pub edition unknown":
-            new_date = f"{datetime.now().year + 5}"
+            new_date = datetime.date.today().strftime("%b %d, %Y")
         elif "," not in new_date and not new_date.isnumeric():
             new_date = new_date[:3] + ' 01, ' + new_date[4:]
 

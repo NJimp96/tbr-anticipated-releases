@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="update to run on python 3.9">
+    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="make for loops more efficient">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" afterDir="false" />
     </list>
@@ -138,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681151069014</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="make for loops more efficient">
+      <created>1681154821762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681154821762</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +165,7 @@
     <MESSAGE value="update to run on push" />
     <MESSAGE value="update to run on python 3.8" />
     <MESSAGE value="update to run on python 3.9" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to run on python 3.9" />
+    <MESSAGE value="make for loops more efficient" />
+    <option name="LAST_COMMIT_MESSAGE" value="make for loops more efficient" />
   </component>
 </project>
