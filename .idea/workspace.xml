@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="update to accommodate no photo edge case">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="update to account for change in nodejs" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,14 +22,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/enyan/OneDrive/Documents/GitHub/tbr-anticipated-reads/py/goodreadsscraperfunctions.py&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/enyan/OneDrive/Documents/School/Fullstack Developper/Accenture Projects/TBR Anticipated Releases/tbr-anticipated-releases",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.goodreadsscraperfunctions">
     <configuration name="goodreadsscraperfunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="tbr-anticipated-releases" />
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668998982762</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update to account for change in nodejs">
+      <created>1681149887865</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681149887865</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -125,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update to accommodate no photo edge case" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to accommodate no photo edge case" />
+    <MESSAGE value="update to account for change in nodejs" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to account for change in nodejs" />
   </component>
 </project>
