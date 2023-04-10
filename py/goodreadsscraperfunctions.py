@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup as bs
-from datetime import datetime
+from datetime import *
 import requests as requests
 import math
 import re
@@ -73,10 +73,11 @@ def get_dates(soup):
     pub_date_edition_soup = soup.find_all("td", class_="field date_pub_edition")
     pub_date_edition = []
 
-    for date in pub_date_edition_soup:
-        new_date = date.get_text().replace("date pub edition      ", "").strip()
+    for new_date in pub_date_edition_soup:
+        new_date = new_date.get_text().replace("date pub edition      ", "").strip()
         if new_date == "date pub edition unknown":
-            new_date = datetime.date.today().strftime("%b %d, %Y")
+            new_date = date.today() + (5 * timedelta(days=365))
+            new_date = new_date.strftime("%b %d, %Y")
         elif "," not in new_date and not new_date.isnumeric():
             new_date = new_date[:3] + ' 01, ' + new_date[4:]
 

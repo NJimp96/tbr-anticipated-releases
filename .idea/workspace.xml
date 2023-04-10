@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="make for loops more efficient">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="adjust for date edge case (just year)">
+      <change beforePath="$PROJECT_DIR$/data/full_tbr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/full_tbr.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tbr_coming_week.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_coming_week.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tbr_past_month.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_past_month.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681154821762</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="adjust for date edge case (just year)">
+      <created>1681155489727</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681155489727</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +175,7 @@
     <MESSAGE value="update to run on python 3.8" />
     <MESSAGE value="update to run on python 3.9" />
     <MESSAGE value="make for loops more efficient" />
-    <option name="LAST_COMMIT_MESSAGE" value="make for loops more efficient" />
+    <MESSAGE value="adjust for date edge case (just year)" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust for date edge case (just year)" />
   </component>
 </project>
