@@ -22,11 +22,21 @@ def get_links_images(soup):
     and returns a tuple containing a list of book urls and src links for images"""
 
     book_covers = soup.find_all("td", class_="field cover")
-    book_urls = [cover.find("a")["href"] for cover in book_covers]
-    book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
-    book_imgs = [covers.find("img")["src"] for covers in book_covers]
-    book_imgs_complete = [img if "nophoto" in img else img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
-    return book_urls_complete, book_imgs_complete
+
+    book_urls = []
+    book_imgs = []
+    for cover in book_covers:
+        url = "https://goodreads.com" + cover.find("a")["href"]
+        img = cover.find("img")["src"]
+        if "nophoto" not in img:
+            img = img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "")
+        book_urls.append(url)
+        book_imgs.append(img)
+    # book_urls = [cover.find("a")["href"] for cover in book_covers]
+    # book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
+    # book_imgs = [covers.find("img")["src"] for covers in book_covers]
+    # book_imgs_complete = [img if "nophoto" in img else img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
+    return book_urls, book_imgs
 
 
 def get_titles_authors(soup):
@@ -35,22 +45,43 @@ def get_titles_authors(soup):
 
     titles_soup = soup.find_all('td', class_='field title')
     authors_soup = soup.find_all('td', class_='field author')
-    titles_2 = [title.get_text().strip("title").strip().replace("\n", "").replace("       ", "") for title in titles_soup]
-    # due to a quirk in the json reader in javascript need to add a backslash to all '.
-    titles_3 = [title.replace("'", f"") for title in titles_2]
-    authors = [author.get_text().strip().replace("\n*", "").replace("author ", "").split(",") for author in
-               authors_soup]
-    authors_2 = [f"{author[1]} {author[0]}" if len(author) >= 2 else f"{author[0]}" for author in authors]
 
-    return titles_3, authors_2
+    authors = []
+    titles = [title.get_text().strip("title").strip().replace("\n", "").replace("       ", "").replace("'", f"")
+              for title in titles_soup]
+    # due to a quirk in the json reader in javascript need to add a backslash to all '.
+    # titles_3 = [title.replace("'", f"") for title in titles_2]
+    # authors = [author.get_text().strip().replace("\n*", "").replace("author ", "").split(",") for author in
+    #            authors_soup]
+    # authors_2 = [f"{author[1]} {author[0]}" if len(author) >= 2 else f"{author[0]}" for author in authors]
+
+    for author in authors_soup:
+        author = author.get_text().strip().replace("\n*", "").replace("author ", "").split(",")
+        if len(author) >= 2:
+            author = f"{author[1]} {author[0]}"
+        else:
+            author = author[0]
+
+        authors.append(author)
+
+    return titles, authors
 
 
 def get_dates(soup):
     """This function takes in the html soup of a goodreads to-read list
         and returns a list of publication dates of the chosen editions"""
     pub_date_edition_soup = soup.find_all("td", class_="field date_pub_edition")
-    pub_date_edition = [date.get_text().replace("date pub edition      ", "").strip() for date in pub_date_edition_soup]
-    pub_date_edition = [f"{datetime.now().year + 5}" if date == "date pub edition unknown" else date for date in pub_date_edition]
+    pub_date_edition = []
+
+    for date in pub_date_edition_soup:
+        new_date = date.get_text().replace("date pub edition      ", "").strip()
+        if new_date == "date pub edition unknown":
+            new_date = f"{datetime.now().year + 5}"
+        elif "," not in new_date and not new_date.isnumeric():
+            new_date = new_date[:3] + ' 01, ' + new_date[4:]
+
+        pub_date_edition.append(new_date)
+
     return pub_date_edition
 
 
