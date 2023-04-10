@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="adjust for date edge case (just year)">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/updatetbrdata.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/updatetbrdata.yml" afterDir="false" />
+    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="adjust run time">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +24,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/enyan/OneDrive/Documents/School/Fullstack Developper/Accenture Projects/TBR Anticipated Releases/tbr-anticipated-releases",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/enyan/OneDrive/Documents/School/Fullstack Developper/Accenture Projects/TBR Anticipated Releases/tbr-anticipated-releases&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.main">
     <configuration name="goodreadsscraperfunctions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="tbr-anticipated-releases" />
@@ -172,7 +172,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681157373412</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="adjust run time">
+      <created>1681157903425</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681157903425</updated>
+    </task>
+    <task id="LOCAL-00013" summary="adjust run time">
+      <created>1681157987758</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681157987758</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,6 +208,7 @@
     <MESSAGE value="update to run on python 3.9" />
     <MESSAGE value="make for loops more efficient" />
     <MESSAGE value="adjust for date edge case (just year)" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust for date edge case (just year)" />
+    <MESSAGE value="adjust run time" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjust run time" />
   </component>
 </project>
