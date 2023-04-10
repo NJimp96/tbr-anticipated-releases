@@ -32,10 +32,7 @@ def get_links_images(soup):
             img = img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "")
         book_urls.append(url)
         book_imgs.append(img)
-    # book_urls = [cover.find("a")["href"] for cover in book_covers]
-    # book_urls_complete = ["https://goodreads.com"+book_u for book_u in book_urls]
-    # book_imgs = [covers.find("img")["src"] for covers in book_covers]
-    # book_imgs_complete = [img if "nophoto" in img else img.replace(re.search("._[a-zA-Z0-9]+_", img).group(0), "").replace("compressed.", "") for img in book_imgs]
+
     return book_urls, book_imgs
 
 
@@ -49,11 +46,6 @@ def get_titles_authors(soup):
     authors = []
     titles = [title.get_text().strip("title").strip().replace("\n", "").replace("       ", "").replace("'", f"")
               for title in titles_soup]
-    # due to a quirk in the json reader in javascript need to add a backslash to all '.
-    # titles_3 = [title.replace("'", f"") for title in titles_2]
-    # authors = [author.get_text().strip().replace("\n*", "").replace("author ", "").split(",") for author in
-    #            authors_soup]
-    # authors_2 = [f"{author[1]} {author[0]}" if len(author) >= 2 else f"{author[0]}" for author in authors]
 
     for author in authors_soup:
         author = author.get_text().strip().replace("\n*", "").replace("author ", "").split(",")
