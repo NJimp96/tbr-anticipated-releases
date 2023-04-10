@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="update to account for change in nodejs" />
+    <list default="true" id="0bf24556-6b75-4631-9f80-c4ce5afa2f09" name="Changes" comment="update to run on push">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/updatetbrdata.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/updatetbrdata.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681149887865</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update to run on push">
+      <created>1681150091670</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681150091670</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +140,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update to accommodate no photo edge case" />
     <MESSAGE value="update to account for change in nodejs" />
-    <option name="LAST_COMMIT_MESSAGE" value="update to account for change in nodejs" />
+    <MESSAGE value="update to run on push" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to run on push" />
   </component>
 </project>
