@@ -7,7 +7,7 @@ on:
     branches:
         main
   #schedule:
-    #- cron: '40 21 * * 0' # run at 01:17 on Sunday
+    #- cron: '30 21 * * 0' # run at 10:30 on Sunday
 
 jobs:
   build:
