@@ -2,3 +2,5 @@ bs4
 requests
 datetime
 pandas
+selenium
+webdriver-manager
