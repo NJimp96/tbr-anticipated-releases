@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/data/full_tbr.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/full_tbr.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tbr_coming_week.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_coming_week.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tbr_past_month.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/tbr_past_month.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/goodreadsscraperfunctions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/py/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/py/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
