@@ -1,5 +1,8 @@
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import goodreadsscraperfunctions as gsf
 from bs4 import BeautifulSoup as bs
+from selenium import webdriver
 import requests as requests
 import datetime as dt
 import pandas as pd
@@ -9,6 +12,9 @@ import re
 URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?&shelf=to-read&page=1"
 NUM_BOOKS_PER_PAGE = 30
 
+service = Service(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service)
+
 
 def scrape_tbr(url_temp):
     """This functions scrapes through a good reads book list and writes to json file sample_data with the
@@ -17,15 +23,17 @@ def scrape_tbr(url_temp):
 
     # initialise master lists and get number of pages of tbr
     master_dict = {"Title": [], "Author": [], "Date": [], "Link": [], "Cover": []}
-    num_tbr_pages = gsf.get_num_pages(NUM_BOOKS_PER_PAGE, URL_TEMPLATE)
+    driver.get(URL_TEMPLATE)
+    soup_1 = bs(driver.page_source, 'html.parser')
+    num_tbr_pages = gsf.get_num_pages(NUM_BOOKS_PER_PAGE, soup_1)
 
     # loop through each page of tbr list for book data
-    for i in range(1, num_tbr_pages+1):
+    for i in range(2, num_tbr_pages+1):
 
         # update the url with new page number and get soup
         url = re.sub(r"page=[0-9]+", f"page={i}", url_temp)
-        page = requests.get(url)
-        html_soup = bs(page.content, 'html.parser')
+        driver.get(url)
+        html_soup = bs(driver.page_source, 'html.parser')
 
         # add data to master lists
         for count, column in enumerate(master_dict):

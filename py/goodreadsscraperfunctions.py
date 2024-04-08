@@ -1,19 +1,23 @@
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 from bs4 import BeautifulSoup as bs
+from selenium import webdriver
 from datetime import *
 import requests as requests
 import math
 import re
 
 
-def get_num_pages(books_per_page, url):
+def get_num_pages(books_per_page, soup):
     """This function takes in the number of books per page on the goodreads to-reads list
     and finds the number of pages to scrape.
     This is done by finding the total number of books on the list and dividing that by the number of books per page."""
 
-    p = requests.get(url)
-    s = bs(p.content, "html.parser")
+    s = soup
     title = s.find("title").get_text()
+    print(title)
     num_pages = float(re.search(r"[0-9]+", title).group(0))
+    print(num_pages)
     return math.ceil(num_pages/books_per_page)
 
 
