@@ -1,19 +1,40 @@
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import goodreadsscraperfunctions as gsf
+from selenium_stealth import stealth
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 import requests as requests
 import datetime as dt
 import pandas as pd
+import time
 import json
 import re
 
-URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?&shelf=to-read&page=1"
-NUM_BOOKS_PER_PAGE = 30
+URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?page=1&shelf=to-read"
+#"https://www.goodreads.com/review/list/4622890-emily-may?page=2&shelf=read""
+#"https://www.goodreads.com/review/list/8683189-ne?utf8=%E2%9C%93&shelf=to-read&utf8=%E2%9C%93&title=ne&per_page=30"
+NUM_BOOKS_PER_PAGE = 20
+
+options = webdriver.ChromeOptions()
+options.add_argument("start-maximized")
+
+# options.add_argument("--headless")
+
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('useAutomationExtension', False)
 
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
+
+stealth(driver,
+        languages=["en-US", "en"],
+        vendor="Google Inc.",
+        platform="Win32",
+        webgl_vendor="Intel Inc.",
+        renderer="Intel Iris OpenGL Engine",
+        fix_hairline=True,
+        )
 
 
 def scrape_tbr(url_temp):
@@ -24,6 +45,7 @@ def scrape_tbr(url_temp):
     # initialise master lists and get number of pages of tbr
     master_dict = {"Title": [], "Author": [], "Date": [], "Link": [], "Cover": []}
     driver.get(URL_TEMPLATE)
+    time.sleep(5)
     soup_1 = bs(driver.page_source, 'html.parser')
     num_tbr_pages = gsf.get_num_pages(NUM_BOOKS_PER_PAGE, soup_1)
 
@@ -33,7 +55,9 @@ def scrape_tbr(url_temp):
         # update the url with new page number and get soup
         url = re.sub(r"page=[0-9]+", f"page={i}", url_temp)
         driver.get(url)
+        time.sleep(5)
         html_soup = bs(driver.page_source, 'html.parser')
+        print(i, end=", ")
 
         # add data to master lists
         for count, column in enumerate(master_dict):
@@ -59,6 +83,8 @@ def scrape_tbr(url_temp):
         json_data = json.dumps(df.to_dict(orient="records"))
         with open(f"../data/{title}.json", "w") as f:
             f.write(json_data)
+
+    driver.quit()
 
     return books_info, books_month, books_week
 
