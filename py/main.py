@@ -1,3 +1,5 @@
+import os.path
+
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import goodreadsscraperfunctions as gsf
@@ -24,7 +26,10 @@ options.add_argument("start-maximized")
 options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option('useAutomationExtension', False)
 
-service = Service(ChromeDriverManager().install())
+chrome_install = ChromeDriverManager().install()
+folder = os.path.dirname(chrome_install)
+chrome_driver_path = os.path.join(folder, "chromedriver.exe")
+service = Service(chrome_driver_path)
 driver = webdriver.Chrome(service=service)
 
 stealth(driver,
@@ -44,8 +49,9 @@ def scrape_tbr(url_temp):
 
     # initialise master lists and get number of pages of tbr
     master_dict = {"Title": [], "Author": [], "Date": [], "Link": [], "Cover": []}
+    print(URL_TEMPLATE)
     driver.get(URL_TEMPLATE)
-    time.sleep(5)
+    # time.sleep(5)
     soup_1 = bs(driver.page_source, 'html.parser')
     num_tbr_pages = gsf.get_num_pages(NUM_BOOKS_PER_PAGE, soup_1)
 
@@ -55,7 +61,7 @@ def scrape_tbr(url_temp):
         # update the url with new page number and get soup
         url = re.sub(r"page=[0-9]+", f"page={i}", url_temp)
         driver.get(url)
-        time.sleep(5)
+        # time.sleep(5)
         html_soup = bs(driver.page_source, 'html.parser')
         print(i, end=", ")
 
