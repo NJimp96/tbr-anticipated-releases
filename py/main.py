@@ -17,8 +17,8 @@ import json
 import re
 
 URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?page=1&shelf=to-read"
-#"https://www.goodreads.com/review/list/4622890-emily-may?page=2&shelf=read""
-#"https://www.goodreads.com/review/list/8683189-ne?utf8=%E2%9C%93&shelf=to-read&utf8=%E2%9C%93&title=ne&per_page=30"
+# "https://www.goodreads.com/review/list/4622890-emily-may?page=2&shelf=read""
+# "https://www.goodreads.com/review/list/8683189-ne?utf8=%E2%9C%93&shelf=to-read&utf8=%E2%9C%93&title=ne&per_page=30"
 NUM_BOOKS_PER_PAGE = 20
 print("before driver set up")
 # options = webdriver.ChromeOptions()
