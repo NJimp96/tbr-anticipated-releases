@@ -1,10 +1,8 @@
 import os.path
 
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 from selenium import webdriver
-# from selenium.webdriver.edge.service import Service as EdgeService
-# from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.chrome.service import Service
+
 import goodreadsscraperfunctions as gsf
 from selenium_stealth import stealth
 from bs4 import BeautifulSoup as bs
@@ -21,30 +19,10 @@ URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?page=1&shelf=to
 # "https://www.goodreads.com/review/list/8683189-ne?utf8=%E2%9C%93&shelf=to-read&utf8=%E2%9C%93&title=ne&per_page=30"
 NUM_BOOKS_PER_PAGE = 20
 print("before driver set up")
-# options = webdriver.ChromeOptions()
-# options.add_argument("start-maximized")
 
-# options.add_argument("--headless")
-
-# options.add_experimental_option("excludeSwitches", ["enable-automation"])
-# options.add_experimental_option('useAutomationExtension', False)
-#
-chrome_install = ChromeDriverManager().install()
-folder = os.path.dirname(chrome_install)
-chrome_driver_path = os.path.join(folder, "chromedriver.exe")
-service = Service(chrome_driver_path)
-driver = webdriver.Chrome(service=service)
-#
-# stealth(driver,
-#         languages=["en-US", "en"],
-#         vendor="Google Inc.",
-#         platform="Win32",
-#         webgl_vendor="Intel Inc.",
-#         renderer="Intel Iris OpenGL Engine",
-#         fix_hairline=True,
-#         )
-
-# driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+service = Service()
+options = webdriver.ChromeOptions()
+driver = webdriver.Chrome(service=service, options=options)
 print("after driver set up")
 
 

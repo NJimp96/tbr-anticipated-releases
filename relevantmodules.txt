@@ -1,7 +1,7 @@
-bs4
-requests
-datetime
-pandas
-selenium
-webdriver-manager
-selenium_stealth
+bs4==0.0.2
+requests==2.32.2
+datetime==5.5
+pandas==2.2.3
+selenium==4.27.1
+webdriver-manager==4.0.2
+selenium_stealth==1.0.6
