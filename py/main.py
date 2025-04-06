@@ -14,10 +14,8 @@ import time
 import json
 import re
 
-URL_TEMPLATE = "https://www.goodreads.com/review/list/8683189-ne?page=1&shelf=to-read"
-# "https://www.goodreads.com/review/list/4622890-emily-may?page=2&shelf=read""
-# "https://www.goodreads.com/review/list/8683189-ne?utf8=%E2%9C%93&shelf=to-read&utf8=%E2%9C%93&title=ne&per_page=30"
-NUM_BOOKS_PER_PAGE = 10
+URL_TEMPLATE = "https://www.goodreads.com/review/list/152889088-gs?page=1&shelf=to-read"
+NUM_BOOKS_PER_PAGE = 20
 print("before driver set up")
 
 service = Service()
@@ -35,9 +33,12 @@ def scrape_tbr(url_temp):
     master_dict = {"Title": [], "Author": [], "Date": [], "Link": [], "Cover": []}
     print(URL_TEMPLATE)
     driver.get(URL_TEMPLATE)
-    # time.sleep(7)
     soup_1 = bs(driver.page_source, 'html.parser')
     num_tbr_pages = gsf.get_num_pages(NUM_BOOKS_PER_PAGE, soup_1)
+
+    # add data to master lists
+    for count, column in enumerate(master_dict):
+        master_dict[column].extend(gsf.get_all_info(soup_1)[count])
 
     # loop through each page of tbr list for book data
     for i in range(2, num_tbr_pages+1):
@@ -45,7 +46,6 @@ def scrape_tbr(url_temp):
         # update the url with new page number and get soup
         url = re.sub(r"page=[0-9]+", f"page={i}", url_temp)
         driver.get(url)
-        # time.sleep(7)
         html_soup = bs(driver.page_source, 'html.parser')
         print(i, end=", ")
 
